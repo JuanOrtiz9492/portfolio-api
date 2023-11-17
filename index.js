@@ -21,7 +21,7 @@ app.post('/send-mail', async function (req, res) {
     const {sender, subject, body} = req.body
     const info = await transporter.sendMail({
       from: sender, // sender address
-      to: "ortizjuandavid@gmail.com", // list of receivers
+      to: process.env.EMAIL_ADDRESS, // list of receivers
       subject: `Mensaje desde JuanOrtizDev`, // Subject line
       text: body, // plain text body
       html: `
